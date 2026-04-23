@@ -36,9 +36,9 @@ PROFILE="${PROFILE//\,/}"
 
 echo -e "\n[*] Todos los plugins se ejecutarán con: ${GREEN}$PROFILE${NC}. Todos los perfiles guardados en ~/outputs/$PROFILE.txt.\n"
 
-echo "${array[@]}" > ~/outputs/$PROFILE.txt
-
 mkdir -p ~/outputs
+
+echo "${array[@]}" > ~/outputs/$PROFILE.txt
 
 for plugin in "${PLUGINS[@]}"; do 
 	vol.py -f $RUTA --profile=$PROFILE $plugin > ~/outputs/$plugin.txt 2>/dev/null
